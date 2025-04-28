@@ -11,6 +11,7 @@
 
 ### 1.2 Non-Functional Requirements
 - Clean and simple user interface.
+- Minimal or no CSS
 - Local storage using SQLite.
 - All operations should respond within 2 seconds.
 
@@ -23,3 +24,4 @@
 - **Client (Browser)** ↔️ **Flask Server (Python)** ↔️ **SQLite Database**
 
 ---
+(Optional Phase 2: Add a Flask API between Streamlit and SQLite)

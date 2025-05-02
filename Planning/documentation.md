@@ -28,19 +28,21 @@
 
 ### 2.1 Folder Structure
 
+```
 online_journal/
-├── app.py                 # Streamlit frontend
-├── api/                   
+├── app.py                  # Streamlit frontend
+├── api/
 │   ├── __init__.py
-│   └── routes.py          # Flask API routes
+│   └── routes.py           # Flask API routes
 ├── database/
 │   ├── __init__.py
-│   └── db_utils.py        # SQLite functions (table creation, CRUD)
+│   └── db_utils.py         # SQLite functions (table creation, CRUD)
 ├── requirements.txt
 ├── .gitignore
 ├── Planning/
-│   ├── documentation.md   # Documentation containing information
-│   └── requirements.pdf       
+│   ├── documentation.md    # Documentation containing information
+│   └── requirements.pdf
+```
 
 
 ### 2.2 Data Schema (SQLite Table: entries)

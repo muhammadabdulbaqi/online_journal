@@ -84,6 +84,7 @@ Streamlit will use requests to talk to the Flask API.
 
 ### 3.2 In Progress — Flask API (`routes.py`)
 
+- Run using python -m api.routes (API Server)
 - Created Flask server inside `api/routes.py`
 - Defined all API endpoints:
   - `GET /api/entries`
@@ -153,24 +154,64 @@ python -m api.routes
 - Properly updated
 - Fully deleted
 
-## 5. Upcoming Tasks
+## 5. Streamlit UI: Current Status and Future Enhancements
 
-### 📌 5.1 Initialize README.md
-We will begin drafting a GitHub-friendly README file including:
+### ✅ Current Features (app.py)
+- View all journal entries (fetched from Flask API)
+- Collapsible entry layout using `st.expander`
+- Edit and delete functionality per entry
+- Add new journal entries via form
+- Auto-refresh after create/edit/delete
+- Clean layout using `st.sidebar.radio()` navigation
 
-✅ Project description  
-✅ Technology stack  
-✅ How to run the app (setup + usage)  
-✅ API route documentation  
-✅ Screenshots (once frontend is ready)  
-✅ (Optional) Deployment instructions (e.g., Render, Railway)
+---
 
-### 📌 5.2 Phase 6 — Build Streamlit UI (app.py)
-Planned goals for the UI layer:
+### 💡 Future Features & Enhancements
 
-🔹 Display a list of journal entries (fetched from the API)  
-🔹 Add a new entry via Streamlit form  
-🔹 Edit or delete entries using buttons  
-🔹 Use the requests library to talk to Flask  
-🔹 Keep UI logic modular and clean  
-🔹 Ensure full-stack (UI → API → DB) functionality is working
+#### 🔍 Filtering and Search
+- Add a search bar to filter entries by:
+  - Title
+  - Content
+  - Date or keyword
+- Optional: add dropdown to sort entries (e.g. newest/oldest)
+
+#### 🧠 Text Analysis (NLP)
+- **Sentiment Analysis** for each entry using:
+  - TextBlob, VADER, or HuggingFace models
+- Add sentiment badge (e.g., Positive / Negative / Neutral)
+- Optional: word clouds or emotion scoring
+
+#### 🔐 Authentication (Phase 2)
+- Add user accounts with:
+  - Login / Signup via Streamlit Auth or Firebase
+  - Each user sees only their own entries
+- Optional: JWT tokens or Flask-Login for secure auth
+
+#### 🎨 UI & UX Improvements
+- Markdown rendering for journal content
+- Tags or categories for journal entries
+- Multi-page Streamlit app structure
+- Mobile-friendly design enhancements
+
+#### 🌐 Deployment
+- Host Flask + Streamlit:
+  - 🟢 Option 1: Together using Docker on Fly.io or Railway
+  - 🔵 Option 2: Streamlit on Streamlit Cloud, Flask API separately
+
+---
+
+### 🛠 Technical Debt & Future Refactoring
+
+- Modularize frontend logic (`frontend_utils.py`)
+- Write integration tests (API + UI)
+- Improve error handling and logging in app.py
+- Store journal entries in a more scalable database (e.g., PostgreSQL)
+
+---
+
+📌 Next Steps:
+- [ ] Begin README.md for public documentation
+- [ ] Create `frontend_utils.py` and move helper functions from `app.py`
+- [ ] Explore simple text sentiment analysis pipeline (NLTK/TextBlob)
+- [ ] Search and filter jounral entries
+- [ ] user authentication (mongodb)
